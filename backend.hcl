@@ -1,2 +1,2 @@
-bucket = "sunshinebrass-tfstate"
-prefix = "prod/sunshinebrass/"
+bucket = "vernsnet-tfstate"
+prefix = "state/vernsnet/"

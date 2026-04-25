@@ -31,7 +31,7 @@ Internet → Global Forwarding Rules (80/443)
 |------|------|-------------|
 | `gcp_project` | string | GCP project ID (`tbj-sites`) |
 | `gcp_region` | string | Region for regional resources (`us-central1`) |
-| `hostnames` | list(string) | Hostnames to host (set in tim.tfvars) |
+| `hostnames` | list(string) | Hostnames to host (set in verns.tfvars) |
 
 ## Files
 
@@ -51,7 +51,7 @@ Internet → Global Forwarding Rules (80/443)
 | `project-services.tf` | Enables required GCP APIs (compute, iam, storage, cloudresourcemanager) |
 | `service-account.tf` | Minimal SA for tofu automation (storage.admin, loadBalancerAdmin, networkAdmin) |
 | `outputs.tf` | LB IP address (for GoDaddy A records), bucket URLs, SA email |
-| `tim.tfvars` | Variable values (gcp_project, gcp_region, hostnames) |
+| `verns.tfvars` | Variable values (gcp_project, gcp_region, hostnames) |
 
 ## Project Creation (one-time, before tofu)
 
@@ -82,7 +82,7 @@ provision automatically once DNS resolves (usually within 15–60 minutes).
 
 ## Adding a New Hostname
 
-1. Add the hostname string to `hostnames` in `tim.tfvars`
+1. Add the hostname string to `hostnames` in `verns.tfvars`
 2. `tofu apply` — creates bucket, backend bucket, SSL cert, and URL map entry
 3. Add A record in GoDaddy → cert provisions
 
